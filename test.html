@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="header-section">
+        <h1 class="header-title">Medical Assistant Chatbot</h1>
+        <p class="header-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat quidem a ea ullam
+            natus dolores nulla vitae animi rem repellat! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum
+            soluta autem doloremque, nisi inventore quidem itaque sint sequi possimus debitis nostrum facere aspernatur
+            veritatis excepturi dicta ipsum corporis cupiditate placeat illo? Dolores, fuga nisi assumenda cumque eos ipsam
+            doloribus consequatur expedita voluptatibus eaque numquam, cupiditate temporibus soluta saepe blanditiis
+            sapiente obcaecati rerum? Architecto voluptate consequatur deserunt praesentium quod neque adipisci,
+            blanditiis omnis quaerat molestiae sint animi vel voluptatum cumque hic perferendis totam. Recusandae quia,
+            quo ducimus soluta aperiam cumque lorem20 veritatis neque est quibusdam sapiente quos ipsam praesentium illum
+            ullam modi qui officia cum sint ea perspiciatis quisquam consequuntur. Ad harum ea corrupti incidunt. Quod
+            reprehenderit adipisci ducimus neque, deleniti labore facere nulla, exercitationem mollitia in perspiciatis
+            exiure officiis modi molestiae culpa nulla perferendis eum voluptates dolorem blanditiis dolore veniam atque
+            laborum tempora. Ratione voluptatem provident quisquam asperiores, nam, aspernatur facilis voluptates dolore
+            saepe nostrum quis atque perspiciatis qui consequatur sequi pariatur, cupiditate rem ipsum. Laborum
+            praesentium nobis facilis, autem doloremque natus cumque suscipit impedit rerum necessitatibus nihil, ea facere
+            ipsa fugiat veniam minima! Iusto, ipsa cum! Quae corrupti perspiciatis et sequi tempore consectetur quasi
+            illum. Laborum perferendis dolor expedita quas consequatur, exercitationem error quod, et excepturi dolorem
+            repellendus ducimus! Sapiente facere, non magnam architecto vitae possimus, beatae quibusdam id recusandae et
+            error. Tenetur facere consequuntur fugit perferendis, autem sunt adipisci, libero esse tempora reiciendis
+            aperiam velit. Praesentium neque distinctio consectetur cum similique amet suscipit modi rerum magni. Cum ad
+            culpa dolores, odio distinctio delectus nam deserunt, at quod deleniti sequi exercitationem ratione, commodi
+            blanditiis saepe. Consequatur quod dolorem itaque, veritatis nihil obcaecati sit odit minima distinctio iusto.
+            Molestiae et veritatis quas, adipisci assumenda laborum ipsam officia repellendus illum necessitatibus natus
+            tempora, provident eaque perferendis. Officiis ipsum nam, dolore voluptatum quis molestiae natus iusto ad
+            veritatis voluptates consectetur necessitatibus amet assumenda velit doloribus iste ipsa aliquam illum placeat
+            suscipit sapiente facilis! Praesentium nemo veritatis maxime fugit quam non eveniet ea ducimus sequi porro
+            rerum fugiat, in molestias harum aspernatur nihil cumque illum vitae quod tempora beatae, voluptates debitis?
+            Similique eaque impedit voluptatem quam laudantium iste ullam.</p>
+        <div class="features">
+            <div class="feature-item">
+                <img src="Capture.JPG" alt="Icon 1">
+                <h2>73+</h2>
+                <p>Largest private healthcare network of Hospitals</p>
+            </div>
+            <div class="feature-item">
+                <img src="Capture.JPG" alt="Icon 2">
+                <h2>400+</h2>
+                <p>Largest private network of clinics across India</p>
+            </div>
+            <div class="feature-item">
+                <img src="Capture.JPG" alt="Icon 3">
+                <h2>5,000+</h2>
+                <p>Pharmacies</p>
+            </div>
+            <div class="feature-item">
+                <img src="Capture.JPG" alt="Icon 4">
+                <h2>11,000+</h2>
+                <p>Doctors</p>
+            </div>
+        </div>
+        <div class="button-container">
+            <a href="#" class="button book-checkup">Book Health Check-Up</a>
+            <a href="#" class="button book-appointment">Book Appointment</a>
+        </div>
+    </div>
+
+    <img src="Capture.JPG" alt="Icon" class="icon" id="botIcon">
+
+
+    <div class="tooltip" id="tooltip" background-color="black" text-color="white">
+        <p>Welcome to XYZ Healthcare!</p>
+        <p>Explore our services and see how we can assist you.</p>
+        <p>We offer a wide range of healthcare solutions.</p>
+        <p>Book appointments and routine health check-ups easily.</p>
+        <p>Get access to our chatbot for assistance .</p>
+    </div>
+
+    <script>
+        
+        var tooltip = document.getElementById("tooltip");
+        var botIcon = document.getElementById("botIcon");
+
+        tooltip.style.display = "block";
+
+        setTimeout(function () {
+            tooltip.style.display = "none";
+        }, 50000);
+
+        document.getElementById("botIcon").addEventListener("click", function () {
+            window.location.href = "index.html";
+        });
+    </script>
+
+</body>
+
+</html>
+

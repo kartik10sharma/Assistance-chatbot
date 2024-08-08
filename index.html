@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot UI</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+
+<body class="bg-gray-900 flex items-center justify-center h-screen">
+  <div class="chat-container bg-gray-800 shadow-lg rounded-lg overflow-hidden w-96">
+    <div class="chat-header text-white p-4 font-bold text-xl text-center">
+      Medical Assistant Chatbot
+    </div>
+    <div class="chat-messages p-4 h-96 overflow-y-scroll" id="chatMessages">
+      <!-- Messages will appear here -->
+    </div>
+    <div class="input-section p-4 flex">
+      <input type="text" id="userInput" placeholder="Type your message here..." class="flex-1 p-2 rounded">
+      <button onclick="sendMessage()" class="ml-4 px-4 py-2 rounded">Send</button>
+    </div>
+  </div>
+
+  <script>
+    async function sendMessage() {
+      const userInput = document.getElementById('userInput').value;
+      const chatMessages = document.getElementById('chatMessages');
+
+      // Display user's message in the chat window
+      const userMessage = document.createElement('div');
+      userMessage.className = 'user-message';
+      userMessage.innerText = userInput;
+      chatMessages.appendChild(userMessage);
+
+      // Send the message to the server
+      fetch('/process', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ text: userInput })
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Display the bot's response in the chat window
+        const botMessage = document.createElement('div');
+        botMessage.className = 'bot-message';
+        botMessage.innerHTML = `<strong>Bot:</strong> ${data.response.intent_response}`;
+        
+        if (data.response.excerpts && data.response.excerpts.length > 0) {
+          botMessage.innerHTML += '<br><br>Here are some relevant excerpts from our database:<br>';
+          data.response.excerpts.forEach(excerpt => {
+            botMessage.innerHTML += `<p>${excerpt}</p>`;
+          });
+        }
+        
+        chatMessages.appendChild(botMessage);
+        chatMessages.scrollTop = chatMessages.scrollHeight;  // Auto-scroll to the bottom
+      })
+      .catch(error => console.error('Error:', error));
+
+      // Clear the input field
+      document.getElementById('userInput').value = '';
+    }
+  </script>
+</body>
+
+</html>
+
