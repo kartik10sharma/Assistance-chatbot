@@ -16,20 +16,20 @@ A Flask-based medical assistant chatbot designed to process natural language que
 ## Installation
 Clone the Repository:
 
-$ bash
+
 Copy code
-git clone https://github.com/kartik10sharma/Assistance-chatbot.git
+```$ git clone https://github.com/kartik10sharma/Assistance-chatbot.git```
 cd Assistant-chatbot
 Install Dependencies:
 Ensure you have Python installed, then run:
-$ bash
+
 Copy code
-pip install -r requirements.txt
+```$ pip install -r requirements.txt```
 Run the Application:
 
 bash
 Copy code
-python app.py
+```python app.py```
 The application will start on local system 
 
 ### Usage
