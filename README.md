@@ -18,18 +18,24 @@ Clone the Repository:
 
 
 Copy code
-```$ git clone https://github.com/kartik10sharma/Assistance-chatbot.git```
+```
+$ git clone https://github.com/kartik10sharma/Assistance-chatbot.git
+```
 cd Assistant-chatbot
 Install Dependencies:
 Ensure you have Python installed, then run:
 
 Copy code
-```$ pip install -r requirements.txt```
+```
+$ pip install -r requirements.txt
+```
 Run the Application:
 
 bash
 Copy code
-```python app.py```
+```
+python app.py
+```
 The application will start on local system 
 
 ### Usage
